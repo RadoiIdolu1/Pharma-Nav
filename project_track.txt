@@ -1,0 +1,17 @@
+
+=======================================================================================================================
+Salut, as vrea sa folosim fisierul asta ca sa avem un track la tot ceea ce vrem sa facem la proiect.
+Oricine poate face orice modificare la acest fisier si isi poate adauga orice idee. 
+
+
+
+Cum am vorbit saptmana asta la cursul de luni trebuie sa terminam diagramele UML.
+Am stabilit deja rolurile, dar tot zic sa ne impartim din taskuri ca sa ne fie mai usor.
+Diagramele sunt urmatoarele:  Rares -> sa termine diagrama de functionare
+                              Radoi -> sa faca diagramele pentru baza de date
+                              Radu  -> sa faca diagrama pt clase 
+Siteu-uri in care poti face diagramele: draw.io  lucid.app (are si un mic ai integrat dar nu recomand folosirea lui)
+
+Radu,
+DATE: 07.03.2024
+=======================================================================================================================
