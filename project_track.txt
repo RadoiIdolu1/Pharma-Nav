@@ -7,7 +7,7 @@ Oricine poate face orice modificare la acest fisier si isi poate adauga orice id
 
 Cum am vorbit saptmana asta la cursul de luni trebuie sa terminam diagramele UML.
 Am stabilit deja rolurile, dar tot zic sa ne impartim din taskuri ca sa ne fie mai usor.
-Diagramele sunt urmatoarele:  Rares -> sa termine diagrama de functionare
+Diagramele sunt urmatoarele:  Rares -> sa termine diagrama de functionare    link: https://lucid.app/lucidchart/77cbb2e3-25ff-4228-9ed3-a4a79201b80d/edit?viewport_loc=53%2C-119%2C2674%2C1358%2C0_0&invitationId=inv_12f8d330-48ad-4713-9bac-4e6b8822ac8e
                               Radoi -> sa faca diagramele pentru baza de date
                               Radu  -> sa faca diagrama pt clase 
 Siteu-uri in care poti face diagramele: draw.io  lucid.app (are si un mic ai integrat dar nu recomand folosirea lui)
