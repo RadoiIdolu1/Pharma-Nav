@@ -15,3 +15,9 @@ Siteu-uri in care poti face diagramele: draw.io  lucid.app (are si un mic ai int
 Radu,
 DATE: 07.03.2024
 =======================================================================================================================
+
+Am modificat diagrama de functionare conform speculatiilor facute la curs: https://lucid.app/lucidchart/77cbb2e3-25ff-4228-9ed3-a4a79201b80d/edit?invitationId=inv_12f8d330-48ad-4713-9bac-4e6b8822ac8e&page=0_0#
+
+Rares, 
+DATE: 09.03.2024
+=======================================================================================================================
