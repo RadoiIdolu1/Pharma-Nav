@@ -21,3 +21,12 @@ Am modificat diagrama de functionare conform speculatiilor facute la curs: https
 Rares, 
 DATE: 09.03.2024
 =======================================================================================================================
+
+Am facut diagrama pentru baze de date: https://lucid.app/lucidchart/179ba0bc-c819-4102-bcf5-e95f65e3db2f/edit?viewport_loc=-3092%2C-1349%2C4040%2C1877%2C0_0&invitationId=inv_0c121a8e-f8b6-4960-8f46-eb6e5444e780
+Pharma-nav preia date din doua parti:
+1. Users care contin ID Name si Age
+2. Pharmacies care contin ID/Name, Coordonates, Street Name. Medicamentele exista in funcite de id-ul farmaciilor sau numele lor
+
+Radoi,
+DATE: 10.03.2024
+=======================================================================================================================
