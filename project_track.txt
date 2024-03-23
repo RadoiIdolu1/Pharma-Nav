@@ -30,3 +30,66 @@ Pharma-nav preia date din doua parti:
 Radoi,
 DATE: 10.03.2024
 =======================================================================================================================
+
+
+=======================================================================================================================
+
+Salut, nu prea am mai facut nimic in ultimul timp acum ne apucam sa scriem si noi cod :).
+Am facut niste branchuri, va rog si pe voi sa va faceti proproiul branch cu numele vostru sub developer si tester.
+
+Sper ca v-ati uitat peste tutoriale de git si angular.Daca nu va mai las niste linkuri ajutatoare:
+        git cheatsheet https://education.github.com/git-cheat-sheet-education.pdf
+        angulat tutorial : https://angular.io/tutorial
+
+
+Ca prim assigment zic sa facem un home page, o sa gasiti pe branchul developer un folder numit home-component va rog sa il copiati la voi in calculator si sa modificiati acolo.
+
+O sa las mai jos niste pasi pe care ii putem urma (sunt generati de AI dar eu zic ca e ok):
+
+Set Up Your Development Environment:
+
+Install Node.js and npm (Node Package Manager) if you haven't already. Angular requires Node.js and npm to be installed on your system.
+Install Angular CLI (Command Line Interface) globally by running npm install -g @angular/cli in your terminal or command prompt.
+
+Create a New Angular Project:
+
+Use Angular CLI to create a new Angular project by running ng new pharma-nav-app in your terminal or command prompt.
+Navigate into your project directory: cd pharma-nav-app.
+
+
+Ce o sa vreau sa aiba home page-ul:
+
+Header Section:
+
+Include a header section at the top of the page with your app's logo or branding.
+Add a navigation bar or menu for easy access to different sections of your app.
+++++ va da AI idee ce sa contina, desigur trebuie sa se plieze si pe app nostru
+
+Hero Section:
+
+Create a hero section below the header with a large, attention-grabbing image related to pharmaceuticals or healthcare.
+Overlay the hero image with a title and a brief description of your app.
+Use contrasting text colors to ensure readability against the background image.
++++
+
+Features Section:
+
+Highlight the key features of your pharma nav app in a dedicated section.
+Use icons or illustrations to represent each feature along with descriptive text.
+Arrange features in a visually appealing layout, such as a grid or list.
+++++
+
+Footer Section:
+
+Create a footer section at the bottom of the page with links to important pages such as terms of service, privacy policy, and contact information.
+Include social media icons or links to encourage users to connect with your app on various platforms.
++++
+
+Astea sunt doar ideile mele orice e binevenit, va rog sa alegti cate ceva de facut si sa anuntati pe grup cand faceti asta.
+
+
+
+
+Radu,
+DATE: 23.03.2024
+=======================================================================================================================
