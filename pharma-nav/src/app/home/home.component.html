@@ -1,1 +1,75 @@
-<p>yad yada</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharma-Nav</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- FontAwesome link -->
+  <style>
+    /* Custom styles */
+    .header {
+      background: linear-gradient(45deg, #f7b5cc, #ed539f);
+      color: #fff; /* Text color changed to white */
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px; /* Adjust icon size */
+    }
+    .navbar-toggler {
+      border: none; /* Remove default border */
+      background-color: transparent; /* Set background to transparent */
+      color: white; /* Set color of the icon */
+      font-size: 1.5rem; /* Adjust size of the icon */
+      margin-right: 10px; /* Add margin to the right */
+    }
+    .navbar-toggler:focus {
+      outline: none; /* Remove focus outline */
+    }
+    .login-button {
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 8px 10px; /* Adjusted padding */
+      border-radius: 20px;
+      text-decoration: none;
+      margin-right: 10px; /* Add margin to the right */
+    }
+    .login-button:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* Lighten background on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header container-fluid">
+    <!-- Burger menu button -->
+    <div class="col-md-2 text-left">
+      <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        &#9776; <!-- Hamburger icon Unicode character -->
+      </button>
+    </div>
+
+    <!-- Pharma-Nav text -->
+    <div class="col-md-6 text-center">
+      <h1>Pharma-Nav</h1>
+    </div>
+
+    <!-- Login button -->
+    <div class="col-md-4 text-right d-flex align-items-center justify-content-end">
+      <a href="#" class="login-button">Log In</a>
+      <!-- FontAwesome icon as the logo -->
+      <i class="fas fa-flask logo"></i>
+    </div>
+  </header>
+
+  <!-- Your content goes here -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
