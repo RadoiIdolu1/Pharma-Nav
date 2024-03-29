@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharma-Nav</title>
+  <link rel="stylesheet" href="home.component.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- FontAwesome link -->
+  <style>
+  </style>
+</head>
+<body>
+
+  <header class="header container-fluid">
+    <!-- Burger menu button -->
+    <div class="col-md-2 text-left">
+      <button class="navbar-toggler mr-2" type="button" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i> <!-- Hamburger icon -->
+      </button>
+    </div>
+  
+    <!-- Pharma-Nav text -->
+    <div class="col-md-6 text-center">
+      <h1 class="logo">Pharma-Nav</h1>
+    </div>
+  
+    <!-- Login button -->
+    <div class="col-md-4 text-right d-flex align-items-center justify-content-end">
+      <a href="#" class="login-button">Log In</a>
+      <!-- FontAwesome icon as the logo -->
+      <i class="fas fa-flask logo"></i>
+    </div>
+  </header>
+  
+  <!-- Dropdown menu -->
+  <div class="collapse" id="navbarSupportedContent" [ngClass]="{'show': isMenuOpen}" (click)="toggleMenu()">
+    <ul class="navbar-nav mr-auto dropdown-menu">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Partners List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Donations</a>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
