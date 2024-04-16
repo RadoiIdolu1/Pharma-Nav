@@ -1,0 +1,69 @@
+/* Stiluri pentru header */
+.header {
+    background-color: #3498db; /* Culoare de fundal */
+    padding: 20px; /* Spațiere între conținut și margini */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Stiluri pentru logo și nume site */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px; /* Dimensiuni logo */
+    height: auto;
+    margin-right: 10px; /* Spațiere între logo și nume site */
+}
+
+.site-name {
+    color: #ffffff; /* Culoare text */
+    margin: 0; /* Eliminare margini implicite */
+    font-size: 24px; /* Dimensiune font */
+}
+
+/* Stiluri pentru butoane */
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.menu-button, .login-button {
+    background-color: #2ecc71; /* Culoare de fundal butoane */
+    color: #ffffff; /* Culoare text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px; /* Spațiere între butoane */
+}
+
+/* Stiluri pentru dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #333333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
