@@ -10,7 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ccffcc; /* Background verde deschis */
+            background-color: #f2f2f2; /* Background gri deschis */
+            color: #333333; /* Text gri inchis */
         }
         header {
             background-color: #006600; /* Verde inchis */
@@ -33,24 +34,25 @@
         .search-input {
             padding: 8px;
             width: 200px;
-            border: 1px solid #ccc;
+            border: 1px solid #cccccc; /* Border gri deschis */
             border-radius: 5px;
         }
-        .search-button {
-            padding: 8px 16px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+        .search-button,
         .login-button {
             padding: 10px 20px;
             border: none;
-            background-color: #006600; /* Verde inchis */
-            color: white;
+            background-color: #3498db; /* Albastru */
+            color: #ffffff; /* Text alb */
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s; /* Tranzitie pentru hover */
+        }
+        .search-button:hover,
+        .login-button:hover {
+            background-color: #2980b9; /* Albastru inchis la hover */
+        }
+        a {
+            color: #007bff; /* Linkuri albastre */
         }
     </style>
 </head>
