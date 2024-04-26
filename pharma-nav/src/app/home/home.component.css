@@ -1,47 +1,57 @@
-        /* Stilizare pentru aspect */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ccffcc; /* Background verde deschis */
-        }
-        header {
-            background-color: #006600; /* Verde inchis */
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        .search-container {
-            padding: 20px 0;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* Înălțimea completă a ecranului */
-        }
-        .search-bar {
-            margin-bottom: 20px; /* Spatiere intre search bar si butonul de login */
-        }
-        .search-input {
-            padding: 8px;
-            width: 200px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .search-button {
-            padding: 8px 16px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .login-button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #006600; /* Verde inchis */
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+/* Stilizare pentru aspect */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c2c1c1; /* Light gray background */
+}
+
+header {
+    background-color: #333333; /* Dark gray header */
+    color: #ffffff; /* White text */
+    padding: 10px;
+    text-align: center;
+}
+
+.search-container {
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full screen height */
+}
+
+.search-bar {
+    margin-bottom: 20px; /* Spacing between search bar and login button */
+}
+
+.search-input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+}
+
+.search-button,
+.login-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff; /* White text */
+}
+
+.search-button {
+    background-color: #333333; /* Dark gray button */
+}
+
+.login-button {
+    background-color: #333333; /* Dark gray button */
+}
+
+.search-button:hover,
+.login-button:hover {
+    filter: brightness(85%); /* Reduce brightness on hover for button effect */
+}
