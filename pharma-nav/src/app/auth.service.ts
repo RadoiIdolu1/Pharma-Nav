@@ -14,16 +14,8 @@ export class AuthService {
   login_admin(email : string, password : string) {
     this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
         localStorage.setItem('token','true');
-        /* LETS NOT USE VERIFY FOR NOW
-        if(res.user?.emailVerified == true) {
-          this.router.navigate(['dashboard']);
-        } else {
-          this.router.navigate(['/varify-email']);
-        }
-        */
-       //NEED TO CREATE ADMIN DASHBOARD
-       this.router.navigate(["admin_dashboard"]);
-
+        this.router.navigate(["admin_dashboard"]);
+       
     }, err => {
         alert(err.message);
         this.router.navigate(['/login']);
@@ -38,7 +30,7 @@ export class AuthService {
       this.router.navigate(['/login']);
     }, err => {
       alert(err.message);
-      this.router.navigate(['/register']);
+      this.router.navigate(['/admin_dashboard']);
     })
   }
 

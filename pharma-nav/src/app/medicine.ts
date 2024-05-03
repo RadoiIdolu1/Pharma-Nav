@@ -3,5 +3,5 @@ export interface Medicine {
     name: string;
     producer: string;
     quantity: number;
-    descriptiom: string;
+    description: string;
 }
