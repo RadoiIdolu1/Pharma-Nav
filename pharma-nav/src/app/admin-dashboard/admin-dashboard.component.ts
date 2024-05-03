@@ -54,17 +54,18 @@ export class AdminDashboardComponent {
   }
 
   addPharmacy() {
-    this.newPharmacy.meds = []  as Medicine [];
-    
-    this.pharmacyserv.addPharmacy(this.newPharmacy)
-    .then(() => {
-      console.log('Pharmacy added successfully!');
-      this.newPharmacy = {} as Pharmacy; // Reset newPharmacy
-    })
-    .catch((error) => {
-      console.error('Error adding pharmacy: ', error);
-    });
+    this.newPharmacy.meds = [] as Medicine[];
 
+    this.pharmacyserv.addPharmacy(this.newPharmacy)
+      .then(() => {
+        console.log('Pharmacy added successfully!');
+        this.newPharmacy = {} as Pharmacy; // Reset newPharmacy
+        this.snackBar.open('Pharmacy added successfully', 'Close', { duration: 3000 });
+      })
+      .catch((error) => {
+        console.error('Error adding pharmacy: ', error);
+        this.snackBar.open('Error adding pharmacy: ' + error, 'Close', { duration: 3000 });
+      });
   }
 
   removePharmacy() : void  {

@@ -36,9 +36,16 @@ export class PharmacyService {
     );
   }
 
-  // Method to add a new pharmacy
   addPharmacy(pharmacy: Pharmacy): Promise<void> {
-    return this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).set(pharmacy);
+    return this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).get().toPromise().then((doc) => {
+      if ( doc && doc.exists) {
+        throw new Error(`Pharmacy with ID ${pharmacy.id} already exists`);
+      } else {
+        return this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).set(pharmacy);
+      }
+    }).catch((error) => {
+      return Promise.reject('Error occurred while adding pharmacy: ' + error);
+    });
   }
 
   // Method to update an existing pharmacy
