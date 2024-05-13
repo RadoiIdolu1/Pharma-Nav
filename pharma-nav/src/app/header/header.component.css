@@ -1,7 +1,8 @@
 /* Stiluri pentru header */
+
 .header {
-    background-color: #3498db; /* Culoare de fundal */
-    padding: 20px; /* Spațiere între conținut și margini */
+    background-color: #333333; /* Dark gray background */
+    padding: 20px; /* Spacing between content and margins */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,15 +15,15 @@
 }
 
 .logo {
-    width: 80px; /* Dimensiuni logo */
+    width: 80px; /* Logo dimensions */
     height: auto;
-    margin-right: 10px; /* Spațiere între logo și nume site */
+    margin-right: 10px; /* Spacing between logo and site name */
 }
 
 .site-name {
-    color: #ffffff; /* Culoare text */
-    margin: 0; /* Eliminare margini implicite */
-    font-size: 24px; /* Dimensiune font */
+    color: #ffffff; /* White text */
+    margin: 0; /* Remove default margins */
+    font-size: 24px; /* Font size */
 }
 
 /* Stiluri pentru butoane */
@@ -32,21 +33,21 @@
 }
 
 .menu-button, .login-button {
-    background-color: #2ecc71; /* Culoare de fundal butoane */
-    color: #ffffff; /* Culoare text */
+    background-color: #535353; /* Dark gray background for buttons */
+    color: #ffffff; /* White text */
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 10px; /* Spațiere între butoane */
+    margin-left: 10px; /* Spacing between buttons */
 }
 
 /* Stiluri pentru dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #cecdcd; /* Light gray background for dropdown */
     min-width: 160px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -54,14 +55,14 @@
 }
 
 .dropdown-content a {
-    color: #333333;
+    color: #666666; /* Dark gray text */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #dddddd; /* Light gray background on hover */
 }
 
 .dropdown:hover .dropdown-content {

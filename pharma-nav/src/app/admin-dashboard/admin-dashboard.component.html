@@ -1,0 +1,113 @@
+<div class="admin-dashboard">
+    <h1>Admin Dashboard</h1>
+    <div class="buttons">
+        <button (click)="showAddForm()">Add Pharmacy</button>
+        <button (click)="showRemoveForm()">Remove Pharmacy</button>
+        <button (click)="showEditForm()">Edit Pharmacy</button>
+        <button (click)="showAllPharmacies()">See All Pharmacies</button>
+    </div>
+
+    <!-- Add Pharmacy Form -->
+    <div *ngIf="showAddPharmacyForm" class="form">
+        <h2>Add Pharmacy</h2>
+        <div class="input-group">
+            <label for="pharmacyName">ID:</label>
+            <input type="text" id="pharmacyName" name="pharmacyName" [(ngModel)]="newPharmacy.id" required>
+        </div>
+        <div class="input-group">
+            <label for="pharmacyName">Pharmacy Name:</label>
+            <input type="text" id="pharmacyName" name="pharmacyName" [(ngModel)]="newPharmacy.name" required>
+        </div>
+        <div class="input-group">
+            <label for="pharmacyEmail">Email Address:</label>
+            <input type="email" id="pharmacyEmail" name="pharmacyEmail" [(ngModel)]="newPharmacy.email" required>
+        </div>
+        <div class="input-group">
+            <label for="pharmacyLatitude">Latitude:</label>
+            <input type="email" id="pharmacyLatitude" name="pharmacyLatitude" [(ngModel)]="newPharmacy.latitude" required>
+        </div>
+        <div class="input-group">
+            <label for="pharmacyLongitude">Longitude:</label>
+            <input type="email" id="pharmacyLongitude" name="pharmacyLongitude" [(ngModel)]="newPharmacy.longitude" required>
+        </div>
+        <!-- Add other fields here if needed -->
+        <button (click)="addPharmacy()">Submit</button>
+    </div>
+
+    <!-- Remove Pharmacy Form -->
+    <div *ngIf="showRemovePharmacyForm" class="form">
+        <h2>Remove Pharmacy</h2>
+        <div class="input-group">
+            <label for="removePharmacyId">Pharmacy ID:</label>
+            <input type="text" id="removePharmacyId" name="removePharmacyId" [(ngModel)]="pharmacyIdToRemove" required>
+        </div>
+        <button (click)="removePharmacy()">Submit</button>
+    </div>
+
+    <!-- Edit Pharmacy Form -->
+    <div *ngIf="showEditPharmacyForm" class="form">
+        <h2>Edit Pharmacy</h2>
+        <div class="input-group">
+            <label for="editPharmacyId">Pharmacy ID:</label>
+            <input type="text" id="editPharmacyId" name="editPharmacyId" [(ngModel)]="pharmacyIdToEdit" required>
+        </div>
+        <div class="input-group">
+            <label for="editPharmacyName">New Pharmacy Name:</label>
+            <input type="text" id="editPharmacyName" name="editPharmacyName" [(ngModel)]="editedPharmacy.name" required>
+        </div>
+        <div class="input-group">
+            <label for="editPharmacyEmail">New Email Address:</label>
+            <input type="email" id="editPharmacyEmail" name="editPharmacyEmail" [(ngModel)]="editedPharmacy.email" required>
+        </div>
+        <!-- Add other fields here if needed -->
+        <button (click)="editPharmacy()">Submit</button>
+    </div>
+
+    <div *ngIf="showAllPharmaciesList">
+        <h2>All Pharmacies</h2>
+        <table class="pharmacy-table" mat-table [dataSource]="allPharmacies">
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let pharmacy">{{ pharmacy.id }}</td>
+            </ng-container>
+    
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let pharmacy">{{ pharmacy.name }}</td>
+            </ng-container>
+    
+            <!-- Email Column -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let pharmacy">{{ pharmacy.email }}</td>
+            </ng-container>
+    
+            <!-- Latitude Column -->
+            <ng-container matColumnDef="latitude">
+                <th mat-header-cell *matHeaderCellDef>Latitude</th>
+                <td mat-cell *matCellDef="let pharmacy">{{ pharmacy.latitude }}</td>
+            </ng-container>
+    
+            <!-- Longitude Column -->
+            <ng-container matColumnDef="longitude">
+                <th mat-header-cell *matHeaderCellDef>Longitude</th>
+                <td mat-cell *matCellDef="let pharmacy">{{ pharmacy.longitude }}</td>
+            </ng-container>
+    
+            <!-- Total Medicines Column -->
+            <ng-container matColumnDef="meds">
+                <th mat-header-cell *matHeaderCellDef>Total Medicines</th>
+                <td mat-cell *matCellDef="let pharmacy">{{ pharmacy.meds.length }}</td>
+            </ng-container>
+    
+            <!-- Define the displayed columns -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    
+    
+    
+</div>
