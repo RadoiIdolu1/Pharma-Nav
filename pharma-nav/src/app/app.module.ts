@@ -14,6 +14,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PharmacyLoginComponent } from './pharmacy-login/pharmacy-login.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HomeComponent,
     HeaderComponent,
     LoginComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    PharmacyLoginComponent
   ],
   imports: [
     BrowserModule,

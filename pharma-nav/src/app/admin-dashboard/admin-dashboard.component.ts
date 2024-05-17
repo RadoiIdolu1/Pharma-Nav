@@ -83,15 +83,19 @@ export class AdminDashboardComponent {
   }
 
   editPharmacy() {
-    this.firestore.doc('/pharmacies/' + this.pharmacyIdToEdit).update(this.editedPharmacy)
-      .then(() => {
-        console.log('Pharmacy updated successfully!');
-        this.editedPharmacy = {} as Pharmacy; // Reset editedPharmacy
-        this.pharmacyIdToEdit = '';
-      })
-      .catch((error) => {
-        console.error('Error updating pharmacy: ', error);
-      });
+    this.pharmacyserv.updatePharmacy(this.editedPharmacy)
+      .subscribe(
+        () => {
+         
+          this.snackBar.open('Pharmacy updated successfully', 'Close', { duration: 3000 });
+          this.editedPharmacy = {} as Pharmacy; // Reset editedPharmacy
+          this.pharmacyIdToEdit = '';
+        },
+        (error: string) => {
+          console.error('Error updating pharmacy:', error);
+          this.snackBar.open(error, 'Close', { duration: 3000 });
+        }
+      );
   }
 
   getAllPharmacies() {

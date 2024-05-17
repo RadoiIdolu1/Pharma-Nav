@@ -49,8 +49,17 @@ export class PharmacyService {
   }
 
   // Method to update an existing pharmacy
-  updatePharmacy(pharmacy: Pharmacy): Promise<void> {
-    return this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).update(pharmacy);
+  updatePharmacy(pharmacy: Pharmacy): Observable<void> {
+    return new Observable<void>((observer) => {
+      this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).update(pharmacy)
+        .then(() => {
+          observer.next();
+          observer.complete();
+        })
+        .catch((error) => {
+          observer.error('Error occurred while updating pharmacy: ' + error);
+        });
+    });
   }
 
   deletePharmacy(pharmacyId: number): Observable<void> {
