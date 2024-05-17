@@ -38,7 +38,7 @@ export class PharmacyService {
 
   addPharmacy(pharmacy: Pharmacy): Promise<void> {
     return this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).get().toPromise().then((doc) => {
-      if ( doc && doc.exists) {
+      if (doc && doc.exists) {
         throw new Error(`Pharmacy with ID ${pharmacy.id} already exists`);
       } else {
         return this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).set(pharmacy);
@@ -50,16 +50,7 @@ export class PharmacyService {
 
   // Method to update an existing pharmacy
   updatePharmacy(pharmacy: Pharmacy): Observable<void> {
-    return new Observable<void>((observer) => {
-      this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).update(pharmacy)
-        .then(() => {
-          observer.next();
-          observer.complete();
-        })
-        .catch((error) => {
-          observer.error('Error occurred while updating pharmacy: ' + error);
-        });
-    });
+    return from(this.firestore.collection('pharmacies').doc(pharmacy.id.toString()).update(pharmacy).then(() => {}));
   }
 
   deletePharmacy(pharmacyId: number): Observable<void> {

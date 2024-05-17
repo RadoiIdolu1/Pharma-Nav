@@ -1,15 +1,19 @@
 <div class="header">
-    <img src="https://penji.co/wp-content/uploads/2022/09/review-your-logo-options-1.jpg" alt="Logo" class="logo">
-    <h1 class="site-name">Pharma-Nav</h1>
-    <div class="buttons">
-        <div class="dropdown">
-            <button class="menu-button">MENU</button>
-            <div class="dropdown-content">
-                <a href="home">HOME</a>
-                <a  (click)="navigateTo('login_admin')">Pharmacy log-in</a>
-                <a href="contact-support">CONTACT&SUPPORT</a>
-            </div>
-        </div>
-        <button class="login-button" (click)="navigateTo('login_admin')">LOGIN</button>
+    <div class="logo-container">
+      <img src="https://penji.co/wp-content/uploads/2022/09/review-your-logo-options-1.jpg" alt="Logo" class="logo">
+      <h1 class="site-name">Pharma-Nav</h1>
     </div>
-</div>
+    <div class="buttons">
+      <div class="dropdown">
+        <button class="menu-button">MENU</button>
+        <div class="dropdown-content">
+          <a (click)="navigateTo('home')">HOME</a>
+          <a (click)="navigateTo('contact-support')">CONTACT&SUPPORT</a>
+          <a *ngIf="isLoggedIn" (click)="navigateTo('admin_dashboard')">ADMIN DASHBOARD</a>
+        </div>
+      </div>
+      <button class="login-button" *ngIf="!isLoggedIn" (click)="navigateTo('login_admin')">LOGIN</button>
+      <button class="logout-button" *ngIf="isLoggedIn" (click)="logout()">LOGOUT</button>
+    </div>
+  </div>
+  

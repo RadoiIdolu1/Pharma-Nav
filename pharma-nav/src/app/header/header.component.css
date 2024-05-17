@@ -32,7 +32,7 @@
     align-items: center;
 }
 
-.menu-button, .login-button {
+.menu-button, .login-button, .logout-button, .dashboard-button {
     background-color: #535353; /* Dark gray background for buttons */
     color: #ffffff; /* White text */
     border: none;
