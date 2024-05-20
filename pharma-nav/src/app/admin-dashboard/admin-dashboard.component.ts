@@ -5,7 +5,7 @@ import { Pharmacy } from '../pharmacy'; // Import the Pharmacy interface
 import { PharmacyService } from '../pharmacy.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar'; // Import MatSnackBar for displaying error messages
-
+import { NgxSpinnerService } from 'ngx-spinner';
   
 
 

@@ -1,57 +1,88 @@
-/* Stilizare pentru aspect */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #c2c1c1; /* Light gray background */
-}
-
-header {
-    background-color: #333333; /* Dark gray header */
-    color: #ffffff; /* White text */
-    padding: 10px;
-    text-align: center;
+    background-color: #f4f4f9;
 }
 
 .search-container {
-    padding: 20px 0;
-    text-align: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh; /* Full screen height */
+    align-items: center;
+    height: 20vh;
+    background-color: #6200ea;
 }
 
 .search-bar {
-    margin-bottom: 20px; /* Spacing between search bar and login button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 
 .search-input {
-    padding: 8px;
-    width: 200px;
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px;
-}
-
-.search-button,
-.login-button {
-    padding: 8px 16px;
+    width: 80%;
+    padding: 10px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #ffffff; /* White text */
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
 }
 
 .search-button {
-    background-color: #333333; /* Dark gray button */
+    padding: 10px;
+    border: none;
+    background-color: #03dac6;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.login-button {
-    background-color: #333333; /* Dark gray button */
+.search-button:hover {
+    background-color: #018786;
 }
 
-.search-button:hover,
-.login-button:hover {
-    filter: brightness(85%); /* Reduce brightness on hover for button effect */
+.tables-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 20px;
 }
+
+.table {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    padding: 20px;
+}
+
+.table h2 {
+    text-align: center;
+    color: #6200ea;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #6200ea;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+

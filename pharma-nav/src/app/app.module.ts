@@ -14,6 +14,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ContactComponent } from './contact/contact.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HomeComponent,
     HeaderComponent,
     LoginComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AngularFireAuthModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync()
