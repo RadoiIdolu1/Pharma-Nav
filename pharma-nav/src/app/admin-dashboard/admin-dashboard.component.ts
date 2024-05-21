@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Medicine } from '../medicine';
-import { Pharmacy } from '../pharmacy'; // Import the Pharmacy interface
+import { Pharmacy } from '../pharmacy';
 import { PharmacyService } from '../pharmacy.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSnackBar } from '@angular/material/snack-bar'; // Import MatSnackBar for displaying error messages
-
-  
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -19,16 +16,15 @@ export class AdminDashboardComponent {
   showRemovePharmacyForm: boolean = false;
   showEditPharmacyForm: boolean = false;
   showAllPharmaciesList: boolean = false;
-  isLoading: boolean = false; // Track loading state
-  newPharmacy: Pharmacy = {} as Pharmacy; // Use Pharmacy interface and cast to Pharmacy
-  editedPharmacy: Pharmacy = {} as Pharmacy; // Use Pharmacy interface and cast to Pharmacy
+  isLoading: boolean = false;
+  newPharmacy: Pharmacy = {} as Pharmacy;
+  editedPharmacy: Pharmacy = {} as Pharmacy;
   pharmacyIdToRemove: number = 0;
   pharmacyIdToEdit: string = '';
   allPharmacies: MatTableDataSource<Pharmacy>;
   displayedColumns: string[] = ['id', 'name', 'email', 'latitude', 'longitude', 'meds'];
 
-  constructor(private firestore: AngularFirestore, private pharmacyserv: PharmacyService, private snackBar : MatSnackBar) {
-    
+  constructor(private firestore: AngularFirestore, private pharmacyService: PharmacyService, private snackBar: MatSnackBar) {
     this.allPharmacies = new MatTableDataSource<Pharmacy>([]);
   }
 
@@ -56,10 +52,10 @@ export class AdminDashboardComponent {
   addPharmacy() {
     this.newPharmacy.meds = [] as Medicine[];
 
-    this.pharmacyserv.addPharmacy(this.newPharmacy)
+    this.pharmacyService.addPharmacy(this.newPharmacy)
       .then(() => {
         console.log('Pharmacy added successfully!');
-        this.newPharmacy = {} as Pharmacy; // Reset newPharmacy
+        this.newPharmacy = {} as Pharmacy;
         this.snackBar.open('Pharmacy added successfully', 'Close', { duration: 3000 });
       })
       .catch((error) => {
@@ -68,12 +64,11 @@ export class AdminDashboardComponent {
       });
   }
 
-  removePharmacy() : void  {
-    this.pharmacyserv.deletePharmacy(this.pharmacyIdToRemove)
+  removePharmacy() {
+    this.pharmacyService.deletePharmacy(this.pharmacyIdToRemove)
       .subscribe(
         () => {
           this.snackBar.open('Pharmacy deleted successfully', 'Close', { duration: 3000 });
-          // Optionally, perform any other actions after successful deletion
         },
         (error: string) => {
           this.snackBar.open(error, 'Close', { duration: 3000 });
@@ -83,12 +78,11 @@ export class AdminDashboardComponent {
   }
 
   editPharmacy() {
-    this.pharmacyserv.updatePharmacy(this.editedPharmacy)
+    this.pharmacyService.updatePharmacy(this.editedPharmacy)
       .subscribe(
         () => {
-         
           this.snackBar.open('Pharmacy updated successfully', 'Close', { duration: 3000 });
-          this.editedPharmacy = {} as Pharmacy; // Reset editedPharmacy
+          this.editedPharmacy = {} as Pharmacy;
           this.pharmacyIdToEdit = '';
         },
         (error: string) => {
@@ -99,10 +93,10 @@ export class AdminDashboardComponent {
   }
 
   getAllPharmacies() {
-    this.isLoading = true; // Set loading state to true before fetching data
+    this.isLoading = true;
     this.firestore.collection('pharmacies').valueChanges().subscribe(data => {
       this.allPharmacies = new MatTableDataSource<Pharmacy>(data as Pharmacy[]);
-      this.isLoading = false; // Set loading state to false after data is fetched
+      this.isLoading = false;
     });
   }
 

@@ -19,6 +19,7 @@ export class LoginComponent {
     latitude: 0,
     longitude: 0,
     meds: [],
+    password: '',
     id: 0
   };
 
@@ -26,7 +27,11 @@ export class LoginComponent {
 
   onSubmit(event: Event) {
     event.preventDefault(); // Prevent the default form submission behavior
-    this.authService.login_admin(this.admin.email, this.admin.password);
+    if(this.admin.email.endsWith("@pharmacy.com")) {
+      this.PharmacyService.login(this.admin.email, this.admin.password);
+    } else {
+      this.authService.login_admin(this.admin.email, this.admin.password);
+    }
   }
 
 }

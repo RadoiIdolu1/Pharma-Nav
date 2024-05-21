@@ -1,0 +1,81 @@
+<div class="medicine-dashboard">
+    <h1>Medicine Dashboard</h1>
+    <div class="buttons">
+        <button (click)="showAddMedicineForm()">Add Medicine</button>
+        <button (click)="showDeleteMedicineForm()">Delete Medicine</button>
+        <button (click)="showEditMedicineForm()">Edit Medicine</button>
+        <button (click)="showAllMedicines()">See All Medicines</button>
+    </div>
+
+    <!-- Add Medicine Form -->
+    <div *ngIf="showAddForm" class="form">
+        <h2>Add Medicine</h2>
+        <div class="input-group">
+            <label for="medicineName">Medicine Name:</label>
+            <input type="text" id="medicineName" name="medicineName" [(ngModel)]="newMedicine.name" required>
+        </div>
+        <div class="input-group">
+            <label for="medicineName">Medicine ID:</label>
+            <input type="text" id="medicineName" name="medicineName" [(ngModel)]="newMedicine.id" required>
+        </div>
+        <div class="input-group">
+            <label for="producer">Producer:</label>
+            <input type="text" id="producer" name="producer" [(ngModel)]="newMedicine.producer" required>
+        </div>
+        <div class="input-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" [(ngModel)]="newMedicine.quantity" required>
+        </div>
+        <div class="input-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" [(ngModel)]="newMedicine.description" required></textarea>
+        </div>
+        <button (click)="addMedicine()">Submit</button>
+    </div>
+
+    <!-- Delete Medicine Form -->
+    <div *ngIf="showDeleteForm" class="form">
+        <h2>Delete Medicine</h2>
+        <div class="input-group">
+            <label for="medicineId">Medicine ID:</label>
+            <input type="number" id="medicineId" name="medicineId" [(ngModel)]="medicineIdToDelete" required>
+        </div>
+        <button (click)="deleteMedicine()">Submit</button>
+    </div>
+
+    <!-- Edit Medicine Form -->
+    <div *ngIf="showEditForm" class="form">
+        <h2>Edit Medicine</h2>
+        <div class="input-group">
+            <label for="editMedicineId">Medicine ID:</label>
+            <input type="number" id="editMedicineId" name="editMedicineId" [(ngModel)]="editedMedicine.id" required>
+        </div>
+        <div class="input-group">
+            <label for="editMedicineName">New Medicine Name:</label>
+            <input type="text" id="editMedicineName" name="editMedicineName" [(ngModel)]="editedMedicine.name" required>
+        </div>
+        <div class="input-group">
+            <label for="editProducer">New Producer:</label>
+            <input type="text" id="editProducer" name="editProducer" [(ngModel)]="editedMedicine.producer" required>
+        </div>
+        <div class="input-group">
+            <label for="editQuantity">New Quantity:</label>
+            <input type="number" id="editQuantity" name="editQuantity" [(ngModel)]="editedMedicine.quantity" required>
+        </div>
+        <div class="input-group">
+            <label for="editDescription">New Description:</label>
+            <textarea id="editDescription" name="editDescription" [(ngModel)]="editedMedicine.description" required></textarea>
+        </div>
+        <button (click)="editMedicine()">Submit</button>
+    </div>
+
+    <!-- View Medicines -->
+    <div *ngIf="showMedicinesList">
+        <h2>All Medicines</h2>
+        <ul>
+            <li *ngFor="let medicine of allMedicines">
+                {{ medicine.id }} - {{ medicine.name }}: {{ medicine.quantity }} ({{ medicine.producer }})
+            </li>
+        </ul>
+    </div>
+</div>

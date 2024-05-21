@@ -14,6 +14,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PharmacyDashboardComponent } from './pharmacy-dashboard/pharmacy-dashboard.component';
 
 
 
@@ -24,6 +25,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HeaderComponent,
     LoginComponent,
     AdminDashboardComponent,
+    PharmacyDashboardComponent,
 
   ],
   imports: [
