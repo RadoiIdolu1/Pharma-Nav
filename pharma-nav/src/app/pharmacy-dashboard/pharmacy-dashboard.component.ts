@@ -20,7 +20,7 @@ export class PharmacyDashboardComponent implements OnInit, OnDestroy {
   showMedicinesList: boolean = false;
   newMedicine: Medicine = { id: 0, name: '', producer: '', quantity: 0, description: '' };
   editedMedicine: Medicine = { id: 0, name: '', producer: '', quantity: 0, description: '' };
-  medicineIdToDelete: number = 0;
+  medicineIdToDelete: string = '';
   allMedicines: Medicine[] = [];
 
   constructor(private snackBar: MatSnackBar, private pharmacyService : PharmacyService) {
@@ -97,21 +97,20 @@ export class PharmacyDashboardComponent implements OnInit, OnDestroy {
   
 
   deleteMedicine(): void {
-    if (this.medicineIdToDelete == null) {
-      this.snackBar.open('No medicine ID specified.', 'Close', { duration: 3000 });
-      return;
-  }
-
+    if (!this.medicineIdToDelete) {
+        this.snackBar.open('Please enter a valid medicine ID.', 'Close', { duration: 3000 });
+        return;
+    }
 
     this.pharmacyService.deleteMedicineById(this.medicineIdToDelete)
         .then(() => {
-            // Remove the medicine from the local array only if deletion is successful
-            this.allMedicines = this.allMedicines.filter(m => m.id !== this.medicineIdToDelete);
             this.snackBar.open('Medicine deleted successfully', 'Close', { duration: 3000 });
-            console.log('Deleting medicine ID:', this.medicineIdToDelete);
+            // Optionally refresh the list or handle UI state changes
+            this.allMedicines = this.allMedicines.filter(m => String(m.id) !== this.medicineIdToDelete.toString());
+            this.showDeleteForm = false; // Close the form on successful deletion
+            this.medicineIdToDelete = ''; // Reset the ID
         })
         .catch(error => {
-            // Log the error and show a snackbar with the error message
             console.error('Failed to delete medicine:', error);
             this.snackBar.open('Failed to delete medicine: ' + error.message, 'Close', { duration: 3000 });
         });

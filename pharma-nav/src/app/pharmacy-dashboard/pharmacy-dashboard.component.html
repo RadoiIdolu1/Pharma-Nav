@@ -38,9 +38,9 @@
         <h2>Delete Medicine</h2>
         <div class="input-group">
             <label for="medicineId">Medicine ID:</label>
-            <input type="number" id="medicineId" name="medicineId" [(ngModel)]="medicineIdToDelete" required>
+            <input type="text" id="medicineId" name="medicineId" [(ngModel)]="medicineIdToDelete" required pattern="\d*">
         </div>
-        <button (click)="deleteMedicine()">Submit</button>
+        <button (click)="deleteMedicine()" [disabled]="!medicineIdToDelete">Submit</button>
     </div>
 
     <!-- Edit Medicine Form -->

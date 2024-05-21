@@ -178,11 +178,13 @@ export class PharmacyService {
   }
 
 
-  deleteMedicineById(medicineId: number): Promise<void> {
+  deleteMedicineById(medicineId: string): Promise<void> {
     const pharmacyId = localStorage.getItem('pharmacyId');
     if (!pharmacyId) {
         return Promise.reject('No pharmacy logged in.');
     }
+    // Convert the numeric medicineId to a string for consistent comparison.
+    const medicineIdStr = medicineId.toString();
     const pharmacyDocRef = this.firestore.collection('pharmacies').doc(pharmacyId);
 
     return this.firestore.firestore.runTransaction(transaction => {
@@ -190,8 +192,13 @@ export class PharmacyService {
             if (!doc.exists) {
                 throw new Error('Pharmacy record does not exist.');
             }
+
+            
             const pharmacy = doc.data() as Pharmacy;
-            const updatedMedicines = pharmacy.meds.filter(med => med.id !== medicineId);
+           
+
+            const updatedMedicines = pharmacy.meds.filter(med => String(med.id) !== medicineId);
+            
             if (pharmacy.meds.length === updatedMedicines.length) {
                 throw new Error('Medicine with the specified ID does not exist.');
             }
@@ -199,8 +206,9 @@ export class PharmacyService {
         });
     })
     .then(() => console.log('Medicine deleted successfully'))
-    .catch(error => Promise.reject(error));
+    .catch(error => Promise.reject(new Error('Failed to delete medicine: ' + error.message)));
   }
+
 
   editMedicine(updatedMedicine: Medicine): Promise<void> {
     const pharmacyId = localStorage.getItem('pharmacyId');
