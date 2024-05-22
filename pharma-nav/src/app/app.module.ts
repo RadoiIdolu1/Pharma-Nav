@@ -14,8 +14,14 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+<<<<<<< Updated upstream
 import { ContactComponent } from './contact/contact.component';
 import { NgxSpinnerService } from 'ngx-spinner';
+=======
+import { PharmacyDashboardComponent } from './pharmacy-dashboard/pharmacy-dashboard.component';
+import { ContactComponent } from './contact/contact.component';
+
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -25,7 +31,13 @@ import { NgxSpinnerService } from 'ngx-spinner';
     HeaderComponent,
     LoginComponent,
     AdminDashboardComponent,
+<<<<<<< Updated upstream
     ContactComponent
+=======
+    PharmacyDashboardComponent,
+    ContactComponent,
+
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

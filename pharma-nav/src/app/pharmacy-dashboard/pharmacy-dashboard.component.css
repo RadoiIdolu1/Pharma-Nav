@@ -88,23 +88,106 @@ body {
     background-color: #018786;
 }
 
-<<<<<<< Updated upstream
-=======
-.logout-button {
-    background-color: #03dac6;
-    color: white;
+.admin-dashboard, .medicine-dashboard {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard h1, .medicine-dashboard h1 {
+    text-align: center;
+    color: #6200ea;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.buttons button {
     padding: 10px 20px;
     border: none;
+    background-color: #03dac6;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
 }
 
-.logout-button:hover{
+.buttons button:hover {
     background-color: #018786;
 }
 
->>>>>>> Stashed changes
+.form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.form h2 {
+    text-align: center;
+    color: #6200ea;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #03dac6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form button:hover {
+    background-color: #018786;
+}
+
+.pharmacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.pharmacy-table th, .pharmacy-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.pharmacy-table th {
+    background-color: #6200ea;
+    color: white;
+}
+
+.pharmacy-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
 .footer {
     background-color: #6200ea;
     color: white;

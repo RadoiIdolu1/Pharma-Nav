@@ -15,9 +15,18 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit(event: Event) {
+<<<<<<< Updated upstream
     event.preventDefault(); // Prevent the default form submission behavior
 
     this.authService.login_admin(this.admin.email, this.admin.password);
+=======
+    event.preventDefault(); 
+    if(this.admin.email.endsWith("@pharmacy.com")) {
+      this.PharmacyService.login(this.admin.email, this.admin.password);
+    } else {
+      this.authService.login_admin(this.admin.email, this.admin.password);
+    }
+>>>>>>> Stashed changes
   }
 
 }
