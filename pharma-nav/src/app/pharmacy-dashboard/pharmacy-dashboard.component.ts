@@ -27,7 +27,7 @@ export class PharmacyDashboardComponent implements OnInit, OnDestroy {
 
   }
   ngOnInit(): void {
-    // Initial fetching of medicines should be handled here if needed immediately after loading the component
+    
   }
 
   ngOnDestroy(): void {
@@ -75,13 +75,13 @@ export class PharmacyDashboardComponent implements OnInit, OnDestroy {
     this.pharmacyService.addMedicineToCurrentPharmacy(this.newMedicine)
       .then(() => {
         this.snackBar.open('Medicine added successfully', 'Close', { duration: 3000 });
-        this.newMedicine = { id: 0, name: '', producer: '', quantity: 0, description: '' }; // Reset new medicine
+        this.newMedicine = { id: 0, name: '', producer: '', quantity: 0, description: '' }; 
       })
       .catch((error) => {
-        // Log the error to the console for debugging purposes
+        
         console.error('Failed to add medicine:', error);
   
-        // Handle specific errors based on the error message
+        
         if (error.includes('No pharmacy logged in')) {
           this.snackBar.open('Error: No pharmacy is currently logged in.', 'Close', { duration: 3000 });
         } else if (error.includes('Medicine with this ID already exists')) {
@@ -89,7 +89,7 @@ export class PharmacyDashboardComponent implements OnInit, OnDestroy {
         } else if (error.includes('Document does not exist')) {
           this.snackBar.open('Error: Pharmacy record not found.', 'Close', { duration: 3000 });
         } else {
-          // General error handling if the error is not one of the above types
+          
           this.snackBar.open('An unexpected error occurred.', 'Close', { duration: 3000 });
         }
       });
