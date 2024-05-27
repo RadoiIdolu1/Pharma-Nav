@@ -38,6 +38,7 @@ export class HeaderComponent implements OnInit {
       this.isLoggedIn = loggedIn;
     });
     this.pharmacyService.checkAuthentication();
+    this.router.navigate(['']);
   }
 
   navigateTo(page: string): void {

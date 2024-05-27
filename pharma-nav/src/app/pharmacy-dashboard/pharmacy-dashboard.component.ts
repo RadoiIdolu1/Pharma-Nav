@@ -3,6 +3,7 @@ import { PharmacyService } from '../pharmacy.service';
 import { Medicine } from '../medicine';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pharmacy-dashboard',
@@ -23,7 +24,8 @@ export class PharmacyDashboardComponent implements OnInit, OnDestroy {
   medicineIdToDelete: string = '';
   allMedicines: Medicine[] = [];
 
-  constructor(private snackBar: MatSnackBar, private pharmacyService : PharmacyService) {
+
+  constructor(private snackBar: MatSnackBar, private pharmacyService : PharmacyService, private router: Router) {
 
   }
   ngOnInit(): void {
@@ -93,6 +95,7 @@ export class PharmacyDashboardComponent implements OnInit, OnDestroy {
           this.snackBar.open('An unexpected error occurred.', 'Close', { duration: 3000 });
         }
       });
+    this.router.navigate(['/pharmacy_dashboard'])
   }
   
 

@@ -19,6 +19,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PharmacyDashboardComponent } from './pharmacy-dashboard/pharmacy-dashboard.component';
 import { ContactComponent } from './contact/contact.component';
+import { PharmacyesShowComponent } from './pharmacyes-show/pharmacyes-show.component';
 
 
 
@@ -32,6 +33,7 @@ import { ContactComponent } from './contact/contact.component';
     AdminDashboardComponent,
     PharmacyDashboardComponent,
     ContactComponent,
+    PharmacyesShowComponent,
 
   ],
   imports: [

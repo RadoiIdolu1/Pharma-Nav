@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 
 import { PharmacyDashboardComponent } from './pharmacy-dashboard/pharmacy-dashboard.component';
 
+import { PharmacyesShowComponent } from './pharmacyes-show/pharmacyes-show.component';
 
 import { AuthGuard } from './auth.guard';
 
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path: "login_admin", component: LoginComponent},
   {path : "pharmacy_dashboard", component: PharmacyDashboardComponent},
   {path: "admin_dashboard", component: AdminDashboardComponent,  canActivate: [AuthGuard]},
-  {path: "contact", component: ContactComponent}
+  {path: "contact", component: ContactComponent},
+  { path: 'pharmacyes_show', component: PharmacyesShowComponent },
+
 ];
 
 @NgModule({

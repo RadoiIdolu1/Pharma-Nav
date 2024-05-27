@@ -1,0 +1,19 @@
+<!-- pharmacyes-show.component.html -->
+<div>
+    <h1>Pharmacies</h1>
+    <div *ngIf="pharmacies.length === 0">No pharmacies found.</div>
+    <ul *ngIf="pharmacies.length > 0">
+      <li *ngFor="let pharmacy of pharmacies">
+        <h2>{{ pharmacy.name }}</h2>
+        <p>Email: {{ pharmacy.email }}</p>
+        <p>Location: {{ pharmacy.latitude }}, {{ pharmacy.longitude }}</p>
+        <h3>Medicines:</h3>
+        <ul>
+          <li *ngFor="let med of pharmacy.meds">
+            {{ med.name }}: {{ med.quantity }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  

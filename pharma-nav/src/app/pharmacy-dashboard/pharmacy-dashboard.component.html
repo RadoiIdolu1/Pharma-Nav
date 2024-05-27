@@ -70,21 +70,21 @@
     </div>
 
     <!-- View Medicines -->
-    <div *ngIf="showMedicinesList">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>All Medicines</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <mat-list>
-                    <mat-list-item *ngFor="let medicine of allMedicines">
-                        <div matLine>{{ medicine.id }} - {{ medicine.name }}</div>
-                        <div matLine>Quantity: {{ medicine.quantity }}</div>
-                        <div matLine>Producer: {{ medicine.producer }}</div>
-                    </mat-list-item>
-                </mat-list>
-            </mat-card-content>
+    <div *ngIf="showMedicinesList" class="cards-container">
+        <mat-card *ngFor="let medicine of allMedicines">
+          <mat-card-header>
+            <mat-card-title>{{ medicine.id }} - {{ medicine.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            Producer: {{ medicine.producer }}<br>
+            Quantity: {{ medicine.quantity }}
+          </mat-card-content>
+          <div class="description">
+            {{ medicine.description }}
+          </div>
         </mat-card>
-    </div>
+      </div>
+      
     
+
 </div>

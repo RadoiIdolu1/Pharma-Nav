@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { BehaviorSubject, Observable, from } from 'rxjs';
+import { BehaviorSubject, Observable, from, throwError } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { first, map } from 'rxjs/operators';
+import { catchError, filter, first, map, tap } from 'rxjs/operators';
+import { mergeMap, toArray } from 'rxjs/operators';
 import { Pharmacy } from './pharmacy';
 import { Router } from '@angular/router';
 import { Medicine } from './medicine';
@@ -144,7 +145,7 @@ export class PharmacyService {
     const role = localStorage.getItem('role');
     if (token && role === 'pharmacy') {
       this.setAuthenticated(true);
-      this.router.navigate(['pharmacy_dashboard']);
+      this.router.navigate(['/pharmacy_dashboard']);
     } else {
       this.router.navigate(['']);
     }
@@ -252,6 +253,23 @@ export class PharmacyService {
     return this.firestore.doc<Pharmacy>(`pharmacies/${pharmacyId}`).valueChanges().pipe(
       map(pharmacy => pharmacy ? pharmacy.meds : [])
     );
+  }
+
+
+  searchPharmaciesByMedicineName(medicineName: string): Observable<Pharmacy[]> {
+    return this.firestore.collection<Pharmacy>('pharmacies').valueChanges({ idField: 'id' })
+      .pipe(
+        map(pharmacies => {
+          const result = pharmacies.filter(pharmacy => 
+            pharmacy.meds.some(med => med.name.toLowerCase().includes(medicineName.toLowerCase()))
+          );
+          if (result.length === 0) {
+            throw new Error('No pharmacies found with that medicine.');
+          }
+          return result;
+        }),
+        catchError(error => throwError(() => new Error(error.message || 'An unknown error occurred.')))
+      );
   }
 
   

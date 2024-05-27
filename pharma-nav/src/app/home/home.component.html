@@ -1,11 +1,19 @@
 <body>
-    <div class="search-container">
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Caută...">
-            <button class="search-button">Caută</button>
-        </div>
-        
+
+    <div *ngIf="isLoading" class="overlay">
+        <mat-spinner></mat-spinner>
     </div>
+
+
+<!-- home.component.html -->
+<div class="search-container">
+    <div class="search-bar">
+        <input type="text" class="search-input" [(ngModel)]="searchTerm" placeholder="Caută...">
+        <button class="search-button" (click)="searchPharmacies($event)">Caută</button>
+    </div>
+</div>
+
+        
     <div class="tables-container">
         <div class="table">
             <h2>Cele mai căutate Farmacii</h2>
