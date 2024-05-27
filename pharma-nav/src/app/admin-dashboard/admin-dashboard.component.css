@@ -1,106 +1,130 @@
-/* Styles for the admin dashboard HTML */
-
-.body {
-    background-color:  #c2c1c1;
-}
-
-/* Admin dashboard container */
-.admin-dashboard {
+body {
     font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-/* Heading styles */
-.admin-dashboard h1 {
-    color: #333333; /* Dark gray */
-    margin-bottom: 20px;
-}
-
-/* Button styles */
-.admin-dashboard .buttons {
-    margin-bottom: 20px;
-}
-
-.admin-dashboard button {
-    background-color: #535353; /* Blue */
-    color: #ffffff; /* White text */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-right: 10px; /* Spacing between buttons */
-}
-
-/* Form styles */
-.admin-dashboard .form {
-    margin-bottom: 20px;
-}
-
-.admin-dashboard .input-group {
-    margin-bottom: 10px;
-}
-
-.admin-dashboard label {
-    display: block;
-    margin-bottom: 6px;
-    color: #333333; /* Dark gray */
-}
-
-.admin-dashboard input[type="text"],
-.admin-dashboard input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #cccccc; /* Light gray */
-}
-
-.admin-dashboard button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #535353; /* Blue */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.admin-dashboard button[type="submit"]:hover {
-    background-color: #535353; /* Dark blue on hover */
-}
-
-/* All Pharmacies list styles */
-.admin-dashboard ul {
-    list-style-type: none;
+    margin: 0;
     padding: 0;
+    background-color: #f4f4f9;
 }
 
-.admin-dashboard li {
-    margin-bottom: 6px;
-    color: #333333; /* Dark gray */
+.header {
+    background-color: #6200ea;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.admin-dashboard {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard h1 {
+    text-align: center;
+    color: #6200ea;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #03dac6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttons button:hover {
+    background-color: #018786;
+}
+
+.form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.form h2 {
+    text-align: center;
+    color: #6200ea;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #03dac6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form button:hover {
+    background-color: #018786;
 }
 
 .pharmacy-table {
     width: 100%;
     border-collapse: collapse;
-  }
-  
-  .pharmacy-table th,
-  .pharmacy-table td {
-    padding: 8px;
+    margin-top: 20px;
+}
+
+.pharmacy-table th, .pharmacy-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .pharmacy-table th {
-    background-color: #333;
+}
+
+.pharmacy-table th {
+    background-color: #6200ea;
     color: white;
-  }
-  
-  .pharmacy-table tr:nth-child(even) {
+}
+
+.pharmacy-table tr:nth-child(even) {
     background-color: #f2f2f2;
-  }
-  
-  .pharmacy-table tr:hover {
-    background-color: #ddd;
-  }
+}
+
+.footer {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

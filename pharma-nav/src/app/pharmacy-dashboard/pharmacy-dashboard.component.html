@@ -71,11 +71,20 @@
 
     <!-- View Medicines -->
     <div *ngIf="showMedicinesList">
-        <h2>All Medicines</h2>
-        <ul>
-            <li *ngFor="let medicine of allMedicines">
-                {{ medicine.id }} - {{ medicine.name }}: {{ medicine.quantity }} ({{ medicine.producer }})
-            </li>
-        </ul>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>All Medicines</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item *ngFor="let medicine of allMedicines">
+                        <div matLine>{{ medicine.id }} - {{ medicine.name }}</div>
+                        <div matLine>Quantity: {{ medicine.quantity }}</div>
+                        <div matLine>Producer: {{ medicine.producer }}</div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
     </div>
+    
 </div>

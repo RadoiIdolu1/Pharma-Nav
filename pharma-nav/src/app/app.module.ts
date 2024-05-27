@@ -8,13 +8,18 @@ import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFireAuth, AngularFireAuthModule} from '@angular/fire/compat/auth';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
+
 import { environment } from './environment';
 import { FormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PharmacyDashboardComponent } from './pharmacy-dashboard/pharmacy-dashboard.component';
+import { ContactComponent } from './contact/contact.component';
+
 
 
 
@@ -26,6 +31,7 @@ import { PharmacyDashboardComponent } from './pharmacy-dashboard/pharmacy-dashbo
     LoginComponent,
     AdminDashboardComponent,
     PharmacyDashboardComponent,
+    ContactComponent,
 
   ],
   imports: [
@@ -35,7 +41,9 @@ import { PharmacyDashboardComponent } from './pharmacy-dashboard/pharmacy-dashbo
     AngularFireAuthModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [
     provideAnimationsAsync()

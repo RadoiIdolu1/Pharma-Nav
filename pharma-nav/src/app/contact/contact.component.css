@@ -5,46 +5,51 @@ body {
     background-color: #f4f4f9;
 }
 
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f9;
+.header {
+    background-color: #6200ea;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-.login-form {
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-form, .support-info {
     background-color: white;
-    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 45%;
+    padding: 20px;
+    margin: 10px;
 }
 
-.login-form h2 {
+.contact-form h2, .support-info h2 {
     text-align: center;
     color: #6200ea;
-    margin-bottom: 20px;
 }
 
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
+.contact-form label, .support-info p, .support-info ul {
     display: block;
-    margin-bottom: 5px;
-    color: #333;
+    margin: 10px 0;
 }
 
-.input-group input {
-    width: 92%;
+.contact-form input, .contact-form textarea {
+    width: 100%;
     padding: 10px;
+    margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-button[type="submit"] {
+.contact-form button {
+    display: block;
     width: 100%;
     padding: 10px;
     border: none;
@@ -55,8 +60,17 @@ button[type="submit"] {
     font-size: 16px;
 }
 
-button[type="submit"]:hover {
+.contact-form button:hover {
     background-color: #018786;
+}
+
+.support-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.support-info li {
+    padding: 5px 0;
 }
 
 .footer {

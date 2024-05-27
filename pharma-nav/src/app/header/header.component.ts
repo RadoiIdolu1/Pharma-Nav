@@ -42,10 +42,16 @@ export class HeaderComponent implements OnInit {
 
   navigateTo(page: string): void {
     this.router.navigate(['/' + page]);
+    this.isAdmin = this.authService.isAdmin();
+    this.isPharmacy = this.authService.isPharmacy();
+
   }
 
   logout(): void {
     this.authService.logout();
     this.pharmacyService.logout();  // Assuming you might also want a logout method here
+    this.isAdmin = this.authService.isAdmin();
+    this.isPharmacy = this.authService.isPharmacy();
+
   }
 }

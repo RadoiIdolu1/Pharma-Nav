@@ -1,70 +1,116 @@
-/* Stiluri pentru header */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
 
 .header {
-    background-color: #333333; /* Dark gray background */
-    padding: 20px; /* Spacing between content and margins */
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* Stiluri pentru logo și nume site */
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: 80px; /* Logo dimensions */
-    height: auto;
-    margin-right: 10px; /* Spacing between logo and site name */
-}
-
-.site-name {
-    color: #ffffff; /* White text */
-    margin: 0; /* Remove default margins */
-    font-size: 24px; /* Font size */
-}
-
-/* Stiluri pentru butoane */
-.buttons {
-    display: flex;
-    align-items: center;
-}
-
-.menu-button, .login-button, .logout-button, .dashboard-button {
-    background-color: #535353; /* Dark gray background for buttons */
-    color: #ffffff; /* White text */
-    border: none;
+    background-color: #6200ea;
     padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px; /* Spacing between buttons */
+    color: white;
 }
 
-/* Stiluri pentru dropdown */
+.header .logo {
+    height: 50px;
+}
+
+.header .site-name {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header .buttons {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-button {
+    background-color: #03dac6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu-button:hover {
+    background-color: #018786;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #cecdcd; /* Light gray background for dropdown */
+    background-color: white;
     min-width: 160px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .dropdown-content a {
-    color: #666666; /* Dark gray text */
+    color: #333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #dddddd; /* Light gray background on hover */
+    background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.login-button 
+ {
+    background-color: #03dac6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.login-button:hover {
+    background-color: #018786;
+}
+
+.logout-button
+ {
+    background-color: #03dac6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-button:hover {
+    background-color: #018786;
+}
+
+.footer {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

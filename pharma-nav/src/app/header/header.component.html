@@ -8,8 +8,9 @@
         <button class="menu-button">MENU</button>
         <div class="dropdown-content">
           <a (click)="navigateTo('home')">HOME</a>
-          <a (click)="navigateTo('contact-support')">CONTACT&SUPPORT</a>
+          <a (click)="navigateTo('contact')">CONTACT&SUPPORT</a>
           <a *ngIf="isAdmin" (click)="navigateTo('admin_dashboard')">ADMIN DASHBOARD</a>
+          <a *ngIf="isPharmacy" (click)="navigateTo('pharmacy_dashboard')">Pharmacy DASHBOARD</a>
         </div>
       </div>
       <button class="login-button" *ngIf="!isLoggedIn" (click)="navigateTo('login_admin')">LOGIN</button>
