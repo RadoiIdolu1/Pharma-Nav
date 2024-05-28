@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Pharmacy } from '../pharmacy'; // Ensure this import is correct
+import tt from '@tomtom-international/web-sdk-maps';
 
 @Component({
   selector: 'app-pharmacyes-show',
@@ -9,11 +10,14 @@ import { Pharmacy } from '../pharmacy'; // Ensure this import is correct
 })
 export class PharmacyesShowComponent implements OnInit, OnDestroy {
   pharmacies: Pharmacy[] = [];
+  selectedPharmacy: Pharmacy | null = null;
 
   logo : string = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReu_4IlhD_JloBZexbk-GaTDdXrs7HLb3lLg&s";
 
   private subscriptions: Subscription[] = [];
-https: any;
+
+  showMap : boolean = false;
+
 
   ngOnInit(): void {
     const data = localStorage.getItem('searchedPharmacies');
@@ -22,8 +26,7 @@ https: any;
     } else {
       console.error('No pharmacies found in localStorage.');
     }
-    // Example of adding a subscription (if you have any)
-    // this.subscriptions.push(someObservable.subscribe());
+
   }
 
   ngOnDestroy(): void {
@@ -37,7 +40,34 @@ https: any;
     console.log(id)
   }
 
-  showLocation(latitude: any, longitude: any): void {
-      console.log(latitude + longitude);
+  toggleMap(pharmacy?: Pharmacy): void {
+    this.selectedPharmacy = pharmacy || null;
+    if (pharmacy) {
+      this.showMap = true;
+      // Use Angular's change detection to wait until the view updates
+      setTimeout(() => this.initMap(pharmacy.latitude, pharmacy.longitude, pharmacy.id), 0);
+    } else {
+      this.showMap = false;
+    }
+}
+
+
+initMap(latitude: number, longitude: number, id: number): void {
+  if (latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180) {
+    console.error('Invalid latitude or longitude values:', latitude, longitude);
+    return;
   }
+
+  const mapId = `map-${id}`; // Ensure this element exists in the DOM
+  const map = tt.map({
+    key: '15cJaoNM8GWft0mMutIwuoiltGN8gAuO',
+    container: mapId,
+    center: [longitude, latitude],
+    zoom: 15
+  });
+  map.on('load', () => {
+    console.log('Map loaded successfully.');
+  });
+}
+
 }

@@ -1,20 +1,28 @@
-  <div class="pharmacy-container">
-    <mat-card *ngFor="let pharmacy of pharmacies">
-        <mat-card-header>
-          <div class="pharmacy-avatar" [ngStyle]="{'background-image': 'url(' + logo + ')'}"></div>
-            <mat-card-title>{{ pharmacy.name }}</mat-card-title>
-            <mat-card-subtitle>{{ pharmacy.email }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <p>Location: {{ pharmacy.latitude }}, {{ pharmacy.longitude }}</p>
-            <p>Medicines:</p>
-            <ul>
-                <li *ngFor="let med of pharmacy.meds">{{ med.name }}: {{ med.quantity }}</li>
-            </ul>
-        </mat-card-content>
-        <mat-card-actions>
-            <button  (click)="reserve(pharmacy.id)">Rezerva</button>
-            <button    (click)="showLocation(pharmacy.latitude, pharmacy.longitude)">Arata Locatia</button>
-        </mat-card-actions>
-    </mat-card>
-  </div>
+<link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet">
+
+<div class="pharmacy-container">
+  <mat-card *ngFor="let pharmacy of pharmacies">
+    <mat-card-header>
+      <div class="pharmacy-avatar" [ngStyle]="{'background-image': 'url(' + logo + ')'}"></div>
+      <mat-card-title>{{ pharmacy.name }}</mat-card-title>
+      <mat-card-subtitle>{{ pharmacy.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Location: {{ pharmacy.latitude }}, {{ pharmacy.longitude }}</p>
+      <p>Medicines:</p>
+      <ul>
+        <li *ngFor="let med of pharmacy.meds">{{ med.name }}: {{ med.quantity }}</li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="reserve(pharmacy.id)">Rezerva</button>
+      <button mat-raised-button color="accent" (click)="toggleMap(pharmacy)">Arata Locatia</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!-- Overlay Container for the Map -->
+<div *ngIf="showMap" class="overlay">
+  <div id="map-{{selectedPharmacy?.id}}" class="map-container" *ngIf="selectedPharmacy"></div>
+  <button class="close-button" (click)="toggleMap()">Close Map</button>
+</div>
