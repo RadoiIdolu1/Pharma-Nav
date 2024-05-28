@@ -1,19 +1,20 @@
-<!-- pharmacyes-show.component.html -->
-<div>
-    <h1>Pharmacies</h1>
-    <div *ngIf="pharmacies.length === 0">No pharmacies found.</div>
-    <ul *ngIf="pharmacies.length > 0">
-      <li *ngFor="let pharmacy of pharmacies">
-        <h2>{{ pharmacy.name }}</h2>
-        <p>Email: {{ pharmacy.email }}</p>
-        <p>Location: {{ pharmacy.latitude }}, {{ pharmacy.longitude }}</p>
-        <h3>Medicines:</h3>
-        <ul>
-          <li *ngFor="let med of pharmacy.meds">
-            {{ med.name }}: {{ med.quantity }}
-          </li>
-        </ul>
-      </li>
-    </ul>
+  <div class="pharmacy-container">
+    <mat-card *ngFor="let pharmacy of pharmacies">
+        <mat-card-header>
+          <div class="pharmacy-avatar" [ngStyle]="{'background-image': 'url(' + logo + ')'}"></div>
+            <mat-card-title>{{ pharmacy.name }}</mat-card-title>
+            <mat-card-subtitle>{{ pharmacy.email }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Location: {{ pharmacy.latitude }}, {{ pharmacy.longitude }}</p>
+            <p>Medicines:</p>
+            <ul>
+                <li *ngFor="let med of pharmacy.meds">{{ med.name }}: {{ med.quantity }}</li>
+            </ul>
+        </mat-card-content>
+        <mat-card-actions>
+            <button  (click)="reserve(pharmacy.id)">Rezerva</button>
+            <button    (click)="showLocation(pharmacy.latitude, pharmacy.longitude)">Arata Locatia</button>
+        </mat-card-actions>
+    </mat-card>
   </div>
-  

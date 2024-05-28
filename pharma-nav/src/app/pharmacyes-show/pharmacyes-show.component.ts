@@ -9,7 +9,11 @@ import { Pharmacy } from '../pharmacy'; // Ensure this import is correct
 })
 export class PharmacyesShowComponent implements OnInit, OnDestroy {
   pharmacies: Pharmacy[] = [];
+
+  logo : string = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReu_4IlhD_JloBZexbk-GaTDdXrs7HLb3lLg&s";
+
   private subscriptions: Subscription[] = [];
+https: any;
 
   ngOnInit(): void {
     const data = localStorage.getItem('searchedPharmacies');
@@ -27,5 +31,13 @@ export class PharmacyesShowComponent implements OnInit, OnDestroy {
     localStorage.setItem('searchedPharmacies', '');
     this.subscriptions.forEach(sub => sub.unsubscribe());
     
+  }
+
+  reserve(id: any): void {
+    console.log(id)
+  }
+
+  showLocation(latitude: any, longitude: any): void {
+      console.log(latitude + longitude);
   }
 }

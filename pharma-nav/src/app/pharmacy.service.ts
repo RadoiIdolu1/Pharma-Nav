@@ -256,21 +256,18 @@ export class PharmacyService {
   }
 
 
+
   searchPharmaciesByMedicineName(medicineName: string): Observable<Pharmacy[]> {
     return this.firestore.collection<Pharmacy>('pharmacies').valueChanges({ idField: 'id' })
       .pipe(
-        map(pharmacies => {
-          const result = pharmacies.filter(pharmacy => 
-            pharmacy.meds.some(med => med.name.toLowerCase().includes(medicineName.toLowerCase()))
-          );
-          if (result.length === 0) {
-            throw new Error('No pharmacies found with that medicine.');
-          }
-          return result;
-        }),
+        map(pharmacies => pharmacies.map(pharmacy => ({
+          ...pharmacy,
+          meds: pharmacy.meds.filter(med => med.name.toLowerCase() === medicineName.toLowerCase())
+        })).filter(pharmacy => pharmacy.meds.length > 0)),
         catchError(error => throwError(() => new Error(error.message || 'An unknown error occurred.')))
       );
   }
+  
 
   
   
